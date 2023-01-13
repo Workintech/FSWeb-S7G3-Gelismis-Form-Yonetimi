@@ -2,7 +2,7 @@ import React from "react";
 export default function Form(props) {
   const { formDatası, handleChange, handleSubmit, butonDisabled } = props;
   return (
-    <form onSubmit={(olay) => handleSubmit(olay)}>
+    <form onSubmit={(olay) => handleSubmit(olay)} data-cy="form-submit">
       <p>
         <label htmlFor="isimAlani">İsim-Soyisim:</label>
         <input
@@ -11,6 +11,7 @@ export default function Form(props) {
           type="text"
           value={formDatası.isim}
           onChange={(event) => handleChange(event)}
+          data-cy="isim"
         />
       </p>
       <p>
@@ -21,6 +22,7 @@ export default function Form(props) {
           type="email"
           value={formDatası.email}
           onChange={(event) => handleChange(event)}
+          data-cy="email"
         />
       </p>
       <p>
@@ -31,6 +33,7 @@ export default function Form(props) {
           type="password"
           value={formDatası.sifre}
           onChange={(event) => handleChange(event)}
+          data-cy="sifre"
         />
       </p>
       <p>
@@ -40,11 +43,12 @@ export default function Form(props) {
           type="checkbox"
           checked={formDatası.kosul}
           onChange={(event) => handleChange(event)}
+          data-cy="kosul"
         />
         <label htmlFor="kosulAlani">Koşulları Kabul Ediyorum</label>
       </p>
       <p>
-        <button type="submit" disabled={butonDisabled}>
+        <button type="submit" disabled={butonDisabled} data-cy="buton">
           Gönder
         </button>
       </p>
